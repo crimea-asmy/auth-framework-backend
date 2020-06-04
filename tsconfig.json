@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "paths": {
+      "@asmy/auth": [
+        "libs/auth/src"
+      ],
+      "@asmy/auth/*": [
+        "libs/auth/src/*"
+      ],
+      "@asmy/user": [
+        "libs/user/src"
+      ],
+      "@asmy/user/*": [
+        "libs/user/src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: homepage-backend
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  tls:
+  - hosts:
+    - aesimonov.ru
+    secretName: aesimonov-tls
+  rules:
+  - host: aesimonov.ru
+    http:
+      paths:
+      - path: /api/?(.*)
+        backend:
+          serviceName: homepage-backend
+          servicePort: 3000
